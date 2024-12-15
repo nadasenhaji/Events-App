@@ -45,7 +45,7 @@ const Login = () => {
                         />
                     </div>
                     <div className="forgot-password">
-                        <a href="#">Forgot Password?</a>
+                        <a href="#">Hello Password?</a>
                     </div>
 
                     <button className="login-button" type="submit">
