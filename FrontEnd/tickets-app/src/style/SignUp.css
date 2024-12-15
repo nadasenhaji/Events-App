@@ -1,21 +1,20 @@
-/* General Body Styling */
-body {
+/* Reset and Base */
+* {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background: linear-gradient(135deg, #f5e4d7, #e4c9b2);
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Sign Up Container */
-.signup-container {
+body {
+    font-family: "Inter", sans-serif;
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 100%;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: linear-gradient(to right top, #ac7950, #b78459, #c18e63, #cc996c, #d7a476, #dca477, #e0a378, #e5a379, #e59774, #e48a71, #e37e70, #e07171);
+    background-size: cover;
 }
+
 
 /* Card Style */
 .signup-card {
