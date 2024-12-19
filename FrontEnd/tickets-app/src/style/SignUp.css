@@ -7,6 +7,11 @@
 
 body {
     font-family: "Inter", sans-serif;
+    background-color: #f5f5f5; /* Neutral light gray background for the body */
+}
+
+/* Signup Container */
+.signup-container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -14,7 +19,6 @@ body {
     background-image: linear-gradient(to right top, #ac7950, #b78459, #c18e63, #cc996c, #d7a476, #dca477, #e0a378, #e5a379, #e59774, #e48a71, #e37e70, #e07171);
     background-size: cover;
 }
-
 
 /* Card Style */
 .signup-card {

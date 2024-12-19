@@ -1,0 +1,256 @@
+/* Navbar Styles */
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    height: 80px;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(to bottom right, #8b5e3c, #d8a07b, #f6e5c6);
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.navbar-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.navbar-center {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-center a {
+    font-size: 16px;
+    font-weight: 500;
+    color: #666;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 2px;
+    transition: color 0.3s ease;
+}
+
+.navbar-center a:hover {
+    color: #333;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.navbar-search {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    padding: 5px 10px;
+    transition: box-shadow 0.3s ease;
+}
+
+.navbar-search:focus-within {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-search input {
+    border: none;
+    background: transparent;
+    outline: none;
+    color: #333;
+    font-size: 14px;
+    flex: 1;
+}
+
+.navbar-search input::placeholder {
+    color: #aaa;
+}
+
+.navbar-search button {
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: #666;
+    cursor: pointer;
+}
+
+.navbar-user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #f6e5c6;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.navbar-user-avatar:hover {
+    transform: scale(1.1);
+}
+
+.navbar-profile-button {
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    color: #666;
+}
+
+.navbar-dropdown {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 10px;
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.navbar-dropdown.visible {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.navbar-dropdown div {
+    padding: 10px;
+    color: #333;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.2s ease;
+}
+
+.navbar-dropdown div:hover {
+    background: #f6e5c6;
+}
+
+/* Dropdown Menu Styles */
+.navbar-menu-button {
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    color: #666;
+    padding: 5px 10px;
+}
+
+.navbar-dropdown {
+    display: none;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 10px;
+    position: absolute;
+    top: 50px;  /* Adjust based on where you want the menu to appear */
+    right: 10px;  /* Adjust based on the alignment */
+    width: 200px;  /* Adjust the width of the dropdown */
+}
+
+.navbar-dropdown.visible {
+    display: block;
+}
+
+/* Dropdown Item Styles */
+.dropdown-item {
+    padding: 15px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 10px;  /* Space between the icon and text */
+    border-bottom: 2px solid #f6e5c6;  /* Light line between items */
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #f6e5c6;
+}
+
+/* Icon styles */
+.dropdown-item i {
+    font-size: 20px; /* Icon size */
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.dropdown-item:hover i {
+    color: #333; /* Darken icon color on hover */
+}
+
+/* Additional Styles */
+.navbar-menu-button {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.navbar-menu-button:hover {
+    background: #f6e5c6;
+    border-radius: 5px;
+}
+.navbar-center a.active {
+    border-bottom: 3px solid #f6e5c6;  /* Underline style */
+    color: #333;  /* Ensure the color stays dark for active links */
+}
+/* New Navbar Links Section */
+.navbar-links-section {
+    padding: 10px 20px;
+    background-color: #f6e5c6;
+}
+
+.navbar-divider {
+    border: 1px solid #ccc;
+    margin: 0 0 10px;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-links a {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+    color: #8b5e3c;
+}
