@@ -1,0 +1,216 @@
+/* Ticket Cart Card */
+.ticket-cart-card {
+    background: linear-gradient(145deg, #ffffff, #f1f1f1);
+    border-radius: 24px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.12), 0 6px 12px rgba(0, 0, 0, 0.08);
+    padding: 30px 20px;
+    width: 95%;
+    max-width: 1000px;
+    font-family: 'San Francisco', 'Helvetica Neue', sans-serif;
+    margin: 25px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: #fff;
+    color: #333;
+    overflow: hidden;
+    border: 1px solid #e5e5e5;
+}
+
+.ticket-cart-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.18), 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.card-title {
+    font-size: 34px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: -0.5px;
+}
+
+.ticket-list {
+    margin-bottom: 25px;
+}
+
+.ticket-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f0f0f5;
+    padding: 18px 0;
+    transition: all 0.3s ease-in-out;
+    border-radius: 12px;
+    background-color: #fafafa;
+}
+
+
+.ticket-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.ticket-name {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.5;
+    font-family: 'San Francisco', sans-serif;
+}
+
+.ticket-price {
+    font-size: 16px;
+    font-weight: 400;
+    color: #777;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.quantity-btn {
+    background-color: #d1d8e0;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+.quantity-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.quantity {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+.remove-btn {
+    background-color: transparent;
+    border: none;
+    color: #ff3b30;
+    cursor: pointer;
+    font-size: 18px;
+    margin-right: 12px;
+    transition: color 0.3s ease, transform 0.2s ease-in-out;
+}
+
+.remove-btn:hover {
+    color: #d93025;
+    transform: scale(1.05);
+}
+
+.discount-section {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.promo-input {
+    padding: 12px;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    width: 75%;
+    font-size: 16px;
+    color: #333;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+.promo-input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+.apply-btn {
+    background: linear-gradient(145deg, #956767, #f8bfbf);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.apply-btn:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+.price-breakdown {
+    margin-top: 20px;
+}
+
+.price-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 0;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.price-label {
+    color: #555;
+}
+
+.price-value {
+    color: #333;
+}
+
+.total-price {
+    font-size: 24px;
+    font-weight: 700;
+    color: #28a745;
+    margin-top: 15px;
+}
+
+.total-price .price-value {
+    color: #28a745;
+}
+
+.checkout-btn-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+}
+
+.checkout-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 16px 32px;
+    border-radius: 30px;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.checkout-btn:hover {
+    background-color: #0069d9;
+    transform: translateY(-3px);
+}
+
+.checkout-btn:active {
+    background-color: #0056b3;
+    transform: translateY(0);
+}
