@@ -5,7 +5,10 @@ import SignUp from './components/SignUp';
 import NavBar from "./components/NavBar";
 import SousNavBar from "./components/SousNavBar";
 import LandingPage from "./components/LandingPage";
-import Panier from "./components/Cart";
+import Favorites from "./components/Favorites";
+import Cart from "./components/Cart";
+import Events from "./components/Events";
+
 function App() {
     return (
         //<Router>
@@ -25,7 +28,13 @@ function App() {
 
             </div>
             <div className="Container">
-                <Panier/>
+                <Cart/>
+            </div>
+            <div className="Container">
+                <Favorites/>
+            </div>
+            <div className="Container">
+                <Events/>
             </div>
 
         </div>

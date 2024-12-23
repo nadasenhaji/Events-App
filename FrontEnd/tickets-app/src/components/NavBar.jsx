@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, {useEffect, useState} from "react";
 import "../style/Navbar.css"; // Ensure the path is correct
+
 
 const Navbar = () => {
     const [dropdownVisible, setDropdownVisible] = useState(false);
