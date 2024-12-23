@@ -25,7 +25,7 @@ const Navbar = () => {
         <>
             <nav className={`navbar-container ${navbarShrink ? "shrink" : ""}`}>
                 <div className="navbar-left">
-                    <div className="navbar-logo" />
+                    <div className="navbar-logo"/>
                     <span className="navbar-name">Guichet</span>
                 </div>
 
@@ -117,7 +117,7 @@ const Navbar = () => {
 
             {/* New Section of Links */}
             <div className="navbar-links-section">
-                <hr className="navbar-divider" />
+                <hr className="navbar-divider"/>
                 <div className="navbar-links">
                     <a href="#" onClick={() => handleLinkClick("home")}>Home</a>
                     <a href="#" onClick={() => handleLinkClick("about")}>About</a>
