@@ -1,0 +1,37 @@
+.scrollable-content {
+    height: calc(100vh - 60px); /* Subtract navbar height from viewport height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    margin-top: 60px; /* Match the navbar height */
+    background-color: #fff;
+
+    /* Smooth scrolling behavior */
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for Webkit browsers (Chrome, Safari, Edge) */
+.scrollable-content::-webkit-scrollbar {
+    width: 8px; /* Thin scrollbar width */
+}
+
+.scrollable-content::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Light background for the track */
+    border-radius: 4px;
+}
+
+.scrollable-content::-webkit-scrollbar-thumb {
+    background: #888; /* Color of the scrollbar thumb */
+    border-radius: 4px; /* Rounded corners for the thumb */
+}
+
+/* Hover effect for the scrollbar thumb */
+.scrollable-content::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Darker color when hovered */
+}
+
+/* Firefox-specific scrollbar styling */
+.scrollable-content {
+    scrollbar-width: thin; /* Use thin scrollbar in Firefox */
+    scrollbar-color: #888 #f1f1f1; /* Thumb color and track color */
+}

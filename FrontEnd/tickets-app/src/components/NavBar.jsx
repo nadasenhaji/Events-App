@@ -1,12 +1,13 @@
-import React, {useEffect, useState} from "react";
-import "../style/Navbar.css"; // Ensure the path is correct
-
+import React, { useEffect, useState } from "react";
+import "../style/Navbar.css";
+import Cart from './Cart'; // Import the Cart component
 
 const Navbar = () => {
     const [dropdownVisible, setDropdownVisible] = useState(false);
     const [navbarShrink, setNavbarShrink] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
     const [activeLink, setActiveLink] = useState("inbox"); // Track active link
+    const [isCartVisible, setIsCartVisible] = useState(false); // State to manage Cart visibility
 
     const handleScroll = () => {
         setNavbarShrink(window.scrollY > 50);
@@ -33,13 +34,6 @@ const Navbar = () => {
                 <div className="navbar-center">
                     <a
                         href="#"
-                        className={activeLink === "inbox" ? "active" : ""}
-                        onClick={() => handleLinkClick("inbox")}
-                    >
-                        Inbox
-                    </a>
-                    <a
-                        href="#"
                         className={activeLink === "events" ? "active" : ""}
                         onClick={() => handleLinkClick("events")}
                     >
@@ -52,20 +46,7 @@ const Navbar = () => {
                     >
                         Favorites
                     </a>
-                    <a
-                        href="#"
-                        className={activeLink === "account-settings" ? "active" : ""}
-                        onClick={() => handleLinkClick("account-settings")}
-                    >
-                        Account Settings
-                    </a>
-                    <a
-                        href="#"
-                        className={activeLink === "contact" ? "active" : ""}
-                        onClick={() => handleLinkClick("contact")}
-                    >
-                        Contact
-                    </a>
+
                 </div>
 
                 <div className="navbar-right">
@@ -83,9 +64,13 @@ const Navbar = () => {
                     </div>
 
                     {/* Cart Icon */}
-                    <div className="navbar-cart">
+                    <div
+                        className="navbar-cart"
+                        onClick={() => setIsCartVisible(true)} // Show cart modal on click
+                    >
                         <i className="fa fa-shopping-cart"></i>
                     </div>
+                    
 
                     {/* Menu Dropdown */}
                     <div
@@ -103,30 +88,21 @@ const Navbar = () => {
                                 <i className="fa fa-sign-in-alt"></i> Se connecter
                             </div>
                             <div className="dropdown-item">
-                                <i className="fa fa-box"></i> Mes commandes
-                            </div>
-                            <div className="dropdown-item">
                                 <i className="fa fa-question-circle"></i> Aide
-                            </div>
-                            <div className="dropdown-item">
-                                <i className="fa fa-phone-alt"></i> Contact
                             </div>
                         </div>
                     )}
                 </div>
             </nav>
 
-            {/* New Section of Links */}
-            <div className="navbar-links-section">
-                <hr className="navbar-divider"/>
-                <div className="navbar-links">
-                    <a href="#" onClick={() => handleLinkClick("home")}>Home</a>
-                    <a href="#" onClick={() => handleLinkClick("about")}>About</a>
-                    <a href="#" onClick={() => handleLinkClick("services")}>Services</a>
-                    <a href="#" onClick={() => handleLinkClick("blog")}>Blog</a>
-                    <a href="#" onClick={() => handleLinkClick("contact-us")}>Contact Us</a>
-                </div>
-            </div>
+            {/* Cart Modal */}
+            {isCartVisible && (
+                <Cart onClose={() => setIsCartVisible(false)} />
+                // Close modal by setting isCartVisible to false
+// Close modal by setting isCartVisible to false
+            )}
+
+
         </>
     );
 };

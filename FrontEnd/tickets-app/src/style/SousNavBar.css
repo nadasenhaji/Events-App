@@ -1,44 +1,74 @@
 /* Conteneur de la sous-navbar */
 .sous-navbar-container {
-    background: #f6f6f6; /* Couleur de fond claire */
-    border-radius: 15px; /* Bords arrondis */
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* Ombre douce */
-    margin: 20px auto; /* Espacement vertical */
-    padding: 15px 10px; /* Espacement interne */
-    width: 100%; /* Largeur ajustée à l'écran */
-    max-width: 1700px; /* Largeur maximale pour les grands écrans */
+    background: #ffffff; /* Clean white background for a modern feel */
+    border-radius: 25px; /* Softer, more rounded corners */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    margin: 20px auto;
+    padding: 20px 25px; /* Adjusted padding for better spacing */
+    width: 100%;
+    max-width: 1700px; /* Max width for large screens */
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 30px;
+    transition: all 0.3s ease; /* Smooth transition for interactions */
+    background-color: #f9f9f9; /* Light background for a fresh look */
 }
 
 /* Liens de la sous-navbar */
 .sous-navbar-links {
     display: flex;
-    flex-wrap: wrap; /* Passe à la ligne si nécessaire */
-    gap: 15px; /* Espacement entre les liens */
+    flex-wrap: wrap; /* Allow links to wrap to the next line */
+    gap: 20px; /* Spacious gap between links */
     justify-content: center;
     align-items: center;
 }
 
+/* Style des liens */
 .sous-navbar-links a {
     text-decoration: none;
-    font-size: 18px; /* Texte plus grand */
-    font-weight: 600; /* Texte en gras */
-    color: #333; /* Couleur du texte */
-    padding: 12px 20px; /* Plus d'espacement interne */
-    background: #ffffff; /* Fond blanc */
-    border-radius: 10px; /* Coins arrondis */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre douce */
-    transition: all 0.3s ease; /* Animation douce */
-    width: auto; /* Taille dynamique par défaut */
-    min-width: 120px; /* Largeur minimale pour un look propre */
-    text-align: center; /* Centrage du texte */
+    font-size: 16px; /* Clean, readable font size */
+    font-weight: 600; /* Bold text for emphasis */
+    color: #333; /* Dark text color for contrast */
+    padding: 14px 30px; /* Comfortable padding for clickable area */
+    background: #f1f1f1; /* Light grey background */
+    border-radius: 50px; /* Fully rounded buttons for iOS feel */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    min-width: 140px; /* Ensure consistency in button size */
+    text-align: center;
+    font-family: 'Poppins', sans-serif; /* Modern, clean font */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
 }
 
+/* Hover effect for links */
 .sous-navbar-links a:hover {
-    background: #8b5e3c; /* Couleur de fond au survol */
-    color: #fff; /* Couleur du texte au survol */
-    transform: translateY(-3px); /* Effet de levée */
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Ombre accentuée */
+    background: #D1B29D; /* Light brown color on hover */
+    color: #ffffff; /* White text on hover for contrast */
+    transform: translateY(-6px); /* Lift effect for a more modern look */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow on hover */
+}
+
+/* Active link style */
+.sous-navbar-links a:active {
+    transform: translateY(2px); /* Soft pressed effect */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); /* Soft shadow when clicked */
+}
+
+/* Optional: Adding a subtle animation to the container */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.sous-navbar-container {
+    animation: fadeIn 1s ease-in-out;
 }

@@ -1,83 +1,152 @@
-/* Landing Page Container */
-.landing-page-container {
-    font-family: 'Arial, sans-serif';
-    color: #333;
-    line-height: 1.6;
+/* General Reset */
+body, html {
     margin: 0;
     padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
     box-sizing: border-box;
+}
+
+/* Landing Page Container */
+.landing-page-container {
+    width: 100%;
+    overflow: hidden;
 }
 
 /* Header Section */
 .header {
-    background: linear-gradient(to right, #000000aa, #333333aa), url('https://source.unsplash.com/1600x900/?concert,live');
+    height: 60vh; /* Reduced height for the header */
+    background-image: url('Home.jpg'); /* Add your "Home" image */
     background-size: cover;
     background-position: center;
-    color: #fff;
-    height: 100vh;
+    position: relative;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    padding: 0 20px;
     text-align: center;
 }
 
+.header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Slightly darker overlay for readability */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .header-content {
-    max-width: 700px;
+    z-index: 2;
+    color: #fff;
+    padding: 0 10px;
+    max-width: 800px; /* Limit text width for better readability */
 }
 
-.header h1 {
-    font-size: 3.5rem;
-    margin-bottom: 20px;
+.header-content h1 {
+    font-size: 2.5rem; /* Slightly smaller font size */
+    margin-bottom: 15px;
+    animation: fadeIn 1s ease-in-out;
 }
 
-.header p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
+.header-content p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
 }
 
 .explore-btn {
-    background-color: #8b5e3c;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    background-color: #ff4757;
     color: #fff;
-    font-size: 1.2rem;
     border: none;
-    padding: 12px 25px;
-    border-radius: 5px;
+    border-radius: 25px; /* Rounded button with smaller border-radius */
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .explore-btn:hover {
-    background-color: #71452e;
-    transform: translateY(-3px);
+    background-color: #ff6b81;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Concert Gallery */
-.concert-gallery {
+/* Featured Concert Section */
+.featured-concert {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f8f8f8;
+}
+
+.featured-concert h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-    padding: 40px 20px;
-    background-color: #f9f9f9;
+    gap: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
 }
 
 .gallery-item img {
     width: 100%;
-    height: 250px;
+    height: 100%;
     object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
 }
 
-.gallery-item img:hover {
-    transform: scale(1.05);
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Footer */
-.footer {
-    background-color: #333;
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
     color: #fff;
+    padding: 10px 15px;
     text-align: center;
-    padding: 15px 0;
-    margin-top: 20px;
+    font-size: 1.1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1;
+}
+
+/* Keyframes for Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

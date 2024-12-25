@@ -1,81 +1,176 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 /* Container Styles */
 .events-container {
     padding: 20px;
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
+    background-color: #f4f7fb;
+    min-height: 100vh;
 }
 
+/* Title Styles */
 .events-container h1 {
     text-align: center;
-    margin-bottom: 20px;
+    font-size: 36px;
+    font-weight: 700;
     color: #333;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
 }
 
 /* Grid Layout */
 .events-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    justify-items: center;
+    padding: 10px;
 }
 
 /* Card Styles */
 .event-card {
-    border: 1px solid #ddd;
-    border-radius: 10px;
     background-color: #fff;
-    padding: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    width: 100%;
+    max-width: 320px;
+    min-height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
+/* Hover effect for card */
 .event-card:hover {
-    transform: scale(1.05);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Image Section */
+.event-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 20px;
 }
 
 /* Category Tag */
 .event-category {
     font-size: 12px;
-    font-weight: bold;
-    padding: 5px;
-    background-color: #f7c1bb;
-    color: #8b4513;
-    border-radius: 5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: rgba(124, 25, 25, 0.4);
+    margin-bottom: 15px;
     display: inline-block;
+    padding: 6px 12px;
+    border-radius: 30px;
+    background-color: rgba(255, 165, 0, 0.2);
 }
 
-/* Event Details */
+/* Event Title */
 .event-title {
-    font-size: 16px;
-    margin: 10px 0;
-    font-weight: bold;
-    color: #333;
+    font-size: 20px;  /* Smaller font size */
+    font-weight: 500;  /* Slightly lighter weight for better readability */
+    color: #333;       /* Dark gray color for text */
+    line-height: 1.4;  /* Slightly larger line height for spacing */
+    margin-bottom: 8px;  /* Smaller margin */
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;  /* Ensures no line breaks */
 }
 
 
-.event-date, .event-price {
+
+/* Event Date */
+.event-date {
     font-size: 14px;
-    margin: 5px 0;
-    color: #666;
+    color: #777;
+    margin-bottom: 12px;
+    font-weight: 500;
 }
 
-/* Buttons */
+/* Event Price (optional) */
+.event-price {
+    font-size: 14px;
+    color: #777;
+    margin: 8px 0;
+}
+
+/* Button Styles */
 .event-button {
-    margin-top: 10px;
-    padding: 8px 12px;
+    margin-top: 15px;
+    padding: 12px 18px;
+    font-size: 16px;
+    font-weight: 600;
     border: none;
-    border-radius: 5px;
+    border-radius: 30px;
     cursor: pointer;
-    color: #fff;
-    background-color:  #000000;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 48%;
+    background-color: #7a4d44;
+    color: white;
+    text-transform: uppercase;
 }
 
 .event-button:hover {
-    background-color: #0056b3;
+    background-color: #c17468;
+    transform: translateY(-2px);
 }
 
+.event-button:active {
+    transform: translateY(2px);
+}
+
+/* Disabled Button (Closed) */
 .event-button.closed {
     background-color: #ddd;
+    color: #888;
     cursor: not-allowed;
-    color: #666;
+}
+
+.event-button.closed:hover {
+    background-color: #ddd;
+}
+
+/* "More" Button */
+.more-button {
+    background-color: #c58e7f;
+}
+
+.more-button:hover {
+    background-color: #ea9079;
+}
+
+/* Button Container to align buttons */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Responsive Grid for smaller screens */
+@media (max-width: 1200px) {
+    .events-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .events-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
 }
