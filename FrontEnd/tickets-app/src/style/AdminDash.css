@@ -1,0 +1,149 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Ensure html and body take full height and width */
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif; /* Optional: Set a font family */
+}
+
+/* Dashboard Container */
+.dashboard-container {
+    display: flex;
+    max-width: none;
+    width: 100vw; /* Ensures full width */
+    flex-direction: row; /* Makes sure the sidebar and content are horizontally aligned */
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #34495e;
+    color: white;
+    padding: 20px;
+    flex-shrink: 0; /* Prevent sidebar from shrinking */
+    height: 100vh; /* Ensures the sidebar takes full height of the viewport */
+    position: fixed; /* Keeps sidebar fixed */
+}
+
+/* Sidebar Items */
+.sidebar-item {
+    margin: 20px 0;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.sidebar-item:hover {
+    background-color: #34495e;
+    padding-left: 10px;
+    transition: 0.3s;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 250px; /* Push the content to the right to make room for the sidebar */
+    padding: 20px;
+    background-color: #ecf0f1;
+    overflow-y: auto; /* Allow scrolling if content overflows */
+    width: calc(100% - 250px); /* Ensures content takes the rest of the available space */
+}
+
+/* Create Event Button */
+
+/* Stats Section */
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.stat-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.stat-box:hover {
+    transform: translateY(-10px);
+}
+
+.stat-box h2 {
+    font-size: 22px;
+    color: #2c3e50;
+}
+
+.stat-number {
+    font-size: 30px;
+    color: #27ae60;
+    margin-top: 10px;
+}
+
+.progress-bar {
+    background-color: #ecf0f1;
+    border-radius: 5px;
+    margin-top: 10px;
+    height: 10px;
+    width: 100%;
+}
+
+.progress {
+    height: 100%;
+    background-color: #27ae60;
+    border-radius: 5px;
+}
+
+/* Charts Section */
+.charts {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.chart-container {
+    width: 48%; /* Adjusted to ensure charts fit well */
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.chart-container h2 {
+    text-align: center;
+    font-size: 22px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+/* Recent Activities Section */
+.recent-activities {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 40px; /* Add some spacing between sections */
+}
+
+.recent-activities h2 {
+    font-size: 22px;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.recent-activities ul {
+    list-style: none;
+}
+
+.recent-activities li {
+    font-size: 16px;
+    color: #7f8c8d;
+    margin-bottom: 10px;
+}

@@ -1,44 +1,95 @@
-.favorites-container {
-    padding: 20px;
+/* Ensure the html and body take the full height and width */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
     font-family: Arial, sans-serif;
 }
 
-.favorites-list {
-    list-style: none;
-    padding: 0;
+/* Full-screen layout */
+body {
+    display: flex;
+    flex-direction: column;
 }
 
+/* Favorites container takes the full screen */
+.favorites-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-grow: 1;
+    height: 100vh; /* Set to 100% viewport height */
+    width: 100vw; /* Set to 100% viewport width */
+    background-color: #f4f4f4;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+/* Title styling */
+.favorites-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* List styling */
+.favorites-list {
+    list-style-type: none;
+    padding: 0;
+    width: 4000%;
+    max-width: 1500px;
+    margin: 0;
+}
+
+/* Favorite item with flexbox layout */
 .favorite-item {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
+    align-items: center; /* Align items vertically */
+    background-color: #fff;
+    padding: 15px;
     margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Image container for the left side */
+.favorite-image {
+    width: 200px; /* Adjust size */
+    height: 200px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-right: 15px; /* Space between image and details */
+}
+
+/* Details styling */
+.favorite-details {
+    flex-grow: 1;
 }
 
 .favorite-details h2 {
     margin: 0;
-    font-size: 18px;
+    font-size: 1.5rem;
+    color: #333;
 }
 
 .favorite-details p {
     margin: 5px 0;
-    color: #666;
+    color: #555;
 }
 
+/* Remove button styling */
 .remove-btn {
-    padding: 8px 12px;
-    background-color: #ff4d4d;
-    color: white;
+    background-color: transparent;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    font-size: 1.2rem;
+    color: #e74c3c;
+    transition: color 0.3s ease;
 }
 
 .remove-btn:hover {
-    background-color: #ff1a1a;
+    color: #c0392b;
 }

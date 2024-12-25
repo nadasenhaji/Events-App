@@ -31,23 +31,7 @@ const Navbar = () => {
                     <span className="navbar-name">Guichet</span>
                 </div>
 
-                <div className="navbar-center">
-                    <a
-                        href="#"
-                        className={activeLink === "events" ? "active" : ""}
-                        onClick={() => handleLinkClick("events")}
-                    >
-                        Events
-                    </a>
-                    <a
-                        href="#"
-                        className={activeLink === "favorites" ? "active" : ""}
-                        onClick={() => handleLinkClick("favorites")}
-                    >
-                        Favorites
-                    </a>
 
-                </div>
 
                 <div className="navbar-right">
                     {/* Search */}
@@ -70,7 +54,13 @@ const Navbar = () => {
                     >
                         <i className="fa fa-shopping-cart"></i>
                     </div>
-                    
+                    <div
+                        className="navbar-favorites"
+                        onClick={() => console.log("Favorites clicked")} // Handle click event
+                    >
+                        <i className="fas fa-heart"></i> {/* FontAwesome heart icon */}
+                    </div>
+
 
                     {/* Menu Dropdown */}
                     <div
@@ -97,7 +87,7 @@ const Navbar = () => {
 
             {/* Cart Modal */}
             {isCartVisible && (
-                <Cart onClose={() => setIsCartVisible(false)} />
+                <Cart onClose={() => setIsCartVisible(false)}/>
                 // Close modal by setting isCartVisible to false
 // Close modal by setting isCartVisible to false
             )}

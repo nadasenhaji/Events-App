@@ -8,6 +8,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative; /* Ensures the footer stays at the bottom */
+    bottom: 0;
+    left: 0;
 }
 
 /* Footer Content Layout */
@@ -108,4 +111,15 @@
     .social-icons {
         justify-content: center;
     }
+}
+
+/* Ensure footer stays at the bottom */
+body, html {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1; /* Ensures the main content takes up available space */
 }
