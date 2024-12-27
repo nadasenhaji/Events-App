@@ -164,25 +164,19 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Payment Method Buttons */
-.payment-options {
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-}
-
-.payment-option {
+/* Payment Submit Button */
+.payment-submit-button {
     background-color: #4CAF50;
     color: white;
     padding: 12px;
     border: none;
     border-radius: 5px;
-    margin: 10px 0;
+    margin-top: 20px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    margin-bottom: 10px; /* Ajoute un peu d'espace sous le bouton */
 }
 
-.payment-option:hover {
+.payment-submit-button:hover {
     background-color: #45a049;
 }
 
@@ -193,13 +187,22 @@
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    margin-top: 20px;
+    margin-top: 10px; /* Ajoute de l'espace entre Pay Now et Close */
     cursor: pointer;
 }
 
 .close-modal-button:hover {
     background-color: #e53935;
 }
+
+/* S'assurer que les icônes ont la même taille */
+.payment-modal i { /* Si vous utilisez des icônes Font Awesome, par exemple */
+    font-size: 24px;  /* Ajustez la taille des icônes */
+    width: 24px;
+    height: 24px;
+    margin-right: 8px; /* Un peu d'espace à droite de l'icône */
+}
+
 /* Modal Overlay */
 .payment-modal-overlay {
     position: fixed;
