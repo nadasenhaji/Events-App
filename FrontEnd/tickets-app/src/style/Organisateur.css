@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Ensure the body takes the full height */
+    width: 100%;  /* Ensure the body takes the full width */
+}
+
+.organizer-container {
+    width: 100vw; /* Full viewport width */
+    min-height: calc(100vh - 80px); /* Full viewport height minus the footer height */
+    padding: 20px;
+    background-color: #fffaf3;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Enable scrolling if the content overflows */
+    margin-bottom: 0; /* Ensure no space between container and footer */
+}
+
+h1 {
+    text-align: center;
+    color: #6d4c41;
+}
+
+.event-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.event-form input,
+.event-form textarea {
+    padding: 10px;
+    border: 1px solid #d7ccc8;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.event-form button {
+    padding: 10px;
+    background-color: #a1887f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.event-form button:hover {
+    background-color: #8d6e63;
+}
+
+.event-list {
+    margin-top: 20px;
+}
+
+.event-item {
+    padding: 15px;
+    border: 1px solid #d7ccc8;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #fff8e1;
+}
+
+.event-item h3 {
+    margin: 0 0 10px 0;
+    color: #6d4c41;
+}
+
+.event-item p {
+    margin: 5px 0;
+}
+
+.event-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-top: 10px;
+}
+
+.event-item button {
+    margin-right: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.event-item button:first-of-type {
+    background-color: #a1887f;
+    color: white;
+}
+
+.event-item button:first-of-type:hover {
+    background-color: #8d6e63;
+}
+
+.event-item button:last-of-type {
+    background-color: #d32f2f;
+    color: white;
+}
+
+.event-item button:last-of-type:hover {
+    background-color: #c62828;
+}
+
+/* Full width footer */
+footer {
+    width: 100%;
+    background-color: #6d4c41;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    margin-top: 0; /* Ensure no space between footer and content */
+}
+
+footer p {
+    margin: 0;
+    font-size: 15px;
+}

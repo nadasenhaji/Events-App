@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate for routing
 import "../style/Navbar.css";
-import Cart from './Cart'; // Import the Cart component
+import Cart from './Cart';
 
 const Navbar = () => {
     const [dropdownVisible, setDropdownVisible] = useState(false);
     const [navbarShrink, setNavbarShrink] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
-    const [activeLink, setActiveLink] = useState("inbox"); // Track active link
-    const [isCartVisible, setIsCartVisible] = useState(false); // State to manage Cart visibility
+    const [activeLink, setActiveLink] = useState("inbox");
+    const [isCartVisible, setIsCartVisible] = useState(false);
+
+    const navigate = useNavigate(); // Initialize navigate hook
 
     const handleScroll = () => {
         setNavbarShrink(window.scrollY > 50);
@@ -23,6 +26,11 @@ const Navbar = () => {
         setActiveLink(link);
     };
 
+    // Navigate to the favorites page
+    const handleFavoritesClick = () => {
+        navigate('/favorites'); // Navigate to the favorites page
+    };
+
     return (
         <>
             <nav className={`navbar-container ${navbarShrink ? "shrink" : ""}`}>
@@ -30,8 +38,6 @@ const Navbar = () => {
                     <div className="navbar-logo"/>
                     <span className="navbar-name">Guichet</span>
                 </div>
-
-
 
                 <div className="navbar-right">
                     {/* Search */}
@@ -54,13 +60,14 @@ const Navbar = () => {
                     >
                         <i className="fa fa-shopping-cart"></i>
                     </div>
+
+                    {/* Favorites Icon */}
                     <div
                         className="navbar-favorites"
-                        onClick={() => console.log("Favorites clicked")} // Handle click event
+                        onClick={handleFavoritesClick} // Navigate to favorites page on click
                     >
                         <i className="fas fa-heart"></i> {/* FontAwesome heart icon */}
                     </div>
-
 
                     {/* Menu Dropdown */}
                     <div
@@ -88,11 +95,7 @@ const Navbar = () => {
             {/* Cart Modal */}
             {isCartVisible && (
                 <Cart onClose={() => setIsCartVisible(false)}/>
-                // Close modal by setting isCartVisible to false
-// Close modal by setting isCartVisible to false
             )}
-
-
         </>
     );
 };

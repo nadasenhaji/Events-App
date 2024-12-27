@@ -18,6 +18,7 @@ html, body {
     max-width: none;
     width: 100vw; /* Ensures full width */
     flex-direction: row; /* Makes sure the sidebar and content are horizontally aligned */
+    margin-top: 60px; /* Added margin to create distance between navbar and dashboard */
 }
 
 /* Sidebar */

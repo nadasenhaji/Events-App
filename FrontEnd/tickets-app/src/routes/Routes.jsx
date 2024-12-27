@@ -2,9 +2,13 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from "../layers/Home";
 import MorePage from "../layers/MorePage";
-import Heart from "../layers/Heart";
 import Board from "../layers/Board";
 import Login from "../components/Login";
+import Org from "../layers/Org";
+import Heart from "../layers/Heart";
+import Events from "../components/Events";
+import Description from "../components/Description";
+
 
 
 const AppRoutes = () => {
@@ -12,9 +16,10 @@ const AppRoutes = () => {
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/description" element={<MorePage />} />
-            <Route path="/fav" element={<Heart />} />
             <Route path="/dash" element={<Board />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/favorites" element={<Heart/>} />
+            <Route path="/Org" element={<Org />} />
 
         </Routes>
     );

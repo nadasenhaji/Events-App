@@ -63,6 +63,18 @@ body {
     object-fit: cover;
     margin-right: 15px; /* Space between image and details */
 }
+.navbar-favorites.active {
+    color: red; /* Change la couleur du cœur quand actif */
+}
+
+.navbar-favorites {
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.navbar-favorites i {
+    font-size: 1.5rem;
+}
 
 /* Dropdown Menu Styles */
 .navbar-menu-button {
@@ -181,6 +193,29 @@ body {
     gap: 15px;
 }
 
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    height: 80px;
+}
+
+.navbar-center {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
 .navbar-search {
     display: flex;
     align-items: center;
@@ -199,7 +234,7 @@ body {
     background: transparent;
     outline: none;
     color: #333;
-    font-size: 14px;
+    font-size: 16px;
     flex: 1;
 }
 
