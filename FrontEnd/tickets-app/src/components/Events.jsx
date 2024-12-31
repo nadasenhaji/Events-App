@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate for routing
 import '../style/Events.css';
 import cardImage from '../../src/assets/images/card.jpeg';
 
 const Events = () => {
     const [isModalOpen, setModalOpen] = useState(false);
     const [selectedEvent, setSelectedEvent] = useState(null);
+
+    const navigate = useNavigate(); // Initialize navigate hook
 
     const events = [
         { id: 1, category: 'Théâtre & Humour', title: 'ILYAS DJADEL InSo Comedy Show à Marrakech', date: '01j 01h 18m 06s', price: '300 MAD', button: 'Guichet Fermé', imageUrl: 'cardImage' },
@@ -23,6 +26,10 @@ const Events = () => {
     const closeModal = () => {
         setModalOpen(false);
         setSelectedEvent(null);
+    };
+
+    const handleMoreClick = (eventId) => {
+        navigate(`/description`); // Redirection vers la page description
     };
 
     return (
@@ -44,7 +51,10 @@ const Events = () => {
                                 {event.button}
                             </button>
                             {event.button !== 'Guichet Fermé' && (
-                                <button className="event-button more-button">
+                                <button
+                                    className="event-button more-button"
+                                    onClick={() => handleMoreClick(event.id)}
+                                >
                                     More
                                 </button>
                             )}

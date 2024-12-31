@@ -31,10 +31,15 @@ const Navbar = () => {
         navigate('/favorites'); // Navigate to the favorites page
     };
 
+    // Navigate to the home page in layers
+    const handleLogoClick = () => {
+        navigate('/'); // Navigate to the home page in layers
+    };
+
     return (
         <>
             <nav className={`navbar-container ${navbarShrink ? "shrink" : ""}`}>
-                <div className="navbar-left">
+                <div className="navbar-left" onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
                     <div className="navbar-logo"/>
                     <span className="navbar-name">Guichet</span>
                 </div>
