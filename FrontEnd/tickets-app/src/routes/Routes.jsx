@@ -8,6 +8,7 @@ import Org from "../layers/Org";
 import Heart from "../layers/Heart";
 import Events from "../components/Events";
 import Description from "../components/Description";
+import Register from "../components/Register";
 
 
 
@@ -20,6 +21,8 @@ const AppRoutes = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/favorites" element={<Heart/>} />
             <Route path="/Org" element={<Org />} />
+            <Route path="/Register" element={<Register />} />
+
 
         </Routes>
     );

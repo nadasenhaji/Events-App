@@ -1,77 +1,69 @@
-import React, { useState } from "react";
-import "../style/Login.css";
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom'; // Importer useNavigate
+import '../style/Login.css';
 
-const Login = () => {
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
-    const [shake, setShake] = useState(false);
-    const [error, setError] = useState(false); // Tracks input error state
+function Login() {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const navigate = useNavigate(); // Initialiser navigate
 
-    const handleLogin = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
 
-        if (!password) {
-            setShake(true);
-            setError(true); // Trigger error state for the password input
-            setTimeout(() => {
-                setShake(false);
-                setError(false); // Remove error state after animation
-            }, 300); // Matches the shake animation duration
+        // Ajouter la logique d'authentification ici (API, validation)
+        const isAuthenticated = true; 
+
+        if (isAuthenticated) {
+            navigate('/');
         } else {
-            console.log("Logging in...", { username, password });
-            // Perform actual login logic here
+            alert('Email ou mot de passe incorrect.');
         }
     };
 
     return (
         <div className="login-container">
-            <div className={`login-card ${shake ? "shake" : ""}`}>
-                <h2>Log In</h2>
-                <form onSubmit={handleLogin}>
-                    <div className="input-field">
-                        <input
-                            type="text"
-                            placeholder="Username"
-                            value={username}
-                            onChange={(e) => setUsername(e.target.value)}
-                        />
-                    </div>
-                    <div className={`input-field ${error ? "error" : ""}`}>
-                        <input
-                            type="password"
-                            placeholder="Password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                        />
-                    </div>
-                    <div className="forgot-password">
-                        <a href="#">Hello Password?</a>
-                    </div>
-
-                    <button className="login-button" type="submit">
-                        Log In
-                    </button>
-                </form>
-                <div className="divider">Or Sign Up Using</div>
-                <div className="social-login">
-                    <button className="social-button facebook">
-                        <i className="fab fa-facebook"></i> Facebook
-                    </button>
-                    <button className="social-button twitter">
-                        <i className="fab fa-twitter"></i> Twitter
-                    </button>
-                    <button className="social-button google">
-                        <i className="fab fa-google"></i> Google
-                    </button>
-                </div>
-                <div className="signup">
-                    <p>
-                        Don't have an account? <a href="/SignUp">Sign Up</a>
+            <div className="login-card">
+                <div className="login-form">
+                    <h1 className="title">Welcome Back</h1>
+                    <p className="subtitle">Log in to your account</p>
+                    <form onSubmit={handleSubmit}>
+                        <div className="input-group">
+                            <label htmlFor="email">Email</label>
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="Enter your email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)} // Ajouter le lien de l'état
+                                required
+                            />
+                        </div>
+                        <div className="input-group">
+                            <label htmlFor="password">Password</label>
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="Enter your password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)} // Ajouter le lien de l'état
+                                required
+                            />
+                        </div>
+                        <button type="submit" className="login-button">Log In</button>
+                    </form>
+                    <p className="footer-text">
+                        Don't have an account?{' '}
+                        <Link to="/register" className="link-text">Sign Up</Link>
                     </p>
+                    <div className="register-button-container">
+                        <Link to="/register">
+                            <button className="register-button">Register</button>
+                        </Link>
+                    </div>
                 </div>
             </div>
         </div>
     );
-};
+}
 
 export default Login;

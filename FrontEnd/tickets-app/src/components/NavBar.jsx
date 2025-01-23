@@ -36,6 +36,16 @@ const Navbar = () => {
         navigate('/'); // Navigate to the home page in layers
     };
 
+    // Navigate to the login page when "Se connecter" is clicked
+    const handleLoginClick = () => {
+        navigate('/login'); // Navigate to the login page
+    };
+
+    // Navigate to the home page when "Acceuil" is clicked
+    const handleHomeClick = () => {
+        navigate('/'); // Navigate to the home page
+    };
+
     return (
         <>
             <nav className={`navbar-container ${navbarShrink ? "shrink" : ""}`}>
@@ -83,10 +93,11 @@ const Navbar = () => {
                     </div>
                     {dropdownVisible && (
                         <div className={`navbar-dropdown ${dropdownVisible ? "visible" : ""}`}>
-                            <div className="dropdown-item">
+                            <div className="dropdown-item" onClick={handleHomeClick}>
                                 <i className="fa fa-home"></i> Acceuil
                             </div>
-                            <div className="dropdown-item">
+                            {/* Clic sur "Se connecter" redirige vers /login */}
+                            <div className="dropdown-item" onClick={handleLoginClick}>
                                 <i className="fa fa-sign-in-alt"></i> Se connecter
                             </div>
                             <div className="dropdown-item">
